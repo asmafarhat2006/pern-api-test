@@ -1,0 +1,20 @@
+{
+  "name": "ecommerce-pern-api-master",
+  "version": "1.0.0",
+  "description": "Ecommerce codecademy project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Asma Qureshi",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "pg": "^8.6.0"
+  }
+}
