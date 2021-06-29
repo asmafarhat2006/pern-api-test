@@ -18,7 +18,7 @@ const proConfig = {
   }
 }; //heroku addons
 
-const config =   devConfig;
+const config =  process.env.NODE_ENV === "production" ? proConfig : devConfig;
 
 module.exports = config; 
 /*
