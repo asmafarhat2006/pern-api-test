@@ -25,7 +25,7 @@ const getOrders = (request, response) => {
   const getOrderByUserId = (request,response) => {
     const userid = request.user;
     console.log(request.user);
-    console.log('should be in this function');
+    console.log('should be in this function yes');
   
     pool.query('SELECT * FROM orders  WHERE userid = $1', [userid], (error, results) => {
       if (error) {
