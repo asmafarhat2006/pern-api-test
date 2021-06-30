@@ -1,7 +1,7 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = (app) => {
-  app.use('/api/*', createProxyMiddleware({
+  app.use('/api', createProxyMiddleware({
     target: 'localhost:3001'
  //   target: 'https://pern-api-test.herokuapp.com',
    
