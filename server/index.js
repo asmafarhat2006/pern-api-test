@@ -135,7 +135,7 @@ const swaggerDocument = require('./swagger.json');
 
   // Serves Swagger API documentation to /docs url
   app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
+/*
   if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, 'build')));
@@ -143,7 +143,7 @@ const swaggerDocument = require('./swagger.json');
     app.get('*', function(req, res) {
       res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
-  }
+  }*/
 
   app.listen(port, () => {
   console.log(`App running on port ${port}.`)
