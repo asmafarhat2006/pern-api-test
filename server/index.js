@@ -17,7 +17,7 @@ if (port == null || port == "") {
 
 
  // Enable Cross Origin Resource Sharing to all origins by default
- app.use(cors({ origin: true, credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
+app.use(cors());
 
 // Configure local strategy to be use for local login
 passport.use(new LocalStrategy(
