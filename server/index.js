@@ -17,7 +17,7 @@ if (port == null || port == "") {
 
 
  // Enable Cross Origin Resource Sharing to all origins by default
-app.use(cors());
+ app.use(cors({ origin: true, credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
 
 // Configure local strategy to be use for local login
 passport.use(new LocalStrategy(
@@ -135,6 +135,15 @@ const swaggerDocument = require('./swagger.json');
 
   // Serves Swagger API documentation to /docs url
   app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+  if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+  }
 
   app.listen(port, () => {
   console.log(`App running on port ${port}.`)
