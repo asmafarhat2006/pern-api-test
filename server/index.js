@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 
 const userDB = require('./db/userqueries');
 const cartDB = require('./db/cartqueries');
@@ -138,10 +138,10 @@ const swaggerDocument = require('./swagger.json');
 
   if (process.env.NODE_ENV === 'production') {
     // Serve any static files
-    app.use(express.static(path.join(__dirname, 'client/build')));
+    app.use(express.static(path.join(__dirname, 'build')));
   // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
-      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+      res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
   }
 
