@@ -10,9 +10,9 @@ const userDB = require('./db/userqueries');
 const cartDB = require('./db/cartqueries');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-let port = process.env.PORT;
+let port = 3001
 if (port == null || port == "") {
-  port = 3001;
+  //port = 3001;
 }
 
 
